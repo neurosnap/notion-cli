@@ -57,9 +57,8 @@ const threadActions = blessed.listbar({
   parent: screen,
   label: 'Thread Actions',
   width: '50%',
-  height: '5%',
-  left: 0,
-  top: '95%',
+  height: 'shrink',
+  bottom: 0,
   border: { type: 'line' },
   style: {
     border: { fg: 'blue' },
@@ -71,7 +70,7 @@ const threadActions = blessed.listbar({
   },
   keys: true,
   vi: true,
-  items: ['(r)efresh', '(c)lean', '(a)rchive', '(t)rash', '(s)nooze', '(u)ndo'],
+  items: ['(r)efresh', '(c)lean', '(a)rchive', '(t)rash', '(u)ndo'],
   autoCommandKeys: false,
 });
 
@@ -157,9 +156,9 @@ function updateThreadlist(state) {
       threadlist.addItem({
         content: displayThread(thread),
         data: thread,
-        style: {
+        /* style: {
           fg: '#666',
-        },
+        }, */
       });
     } else {
       threadlist.addItem({
